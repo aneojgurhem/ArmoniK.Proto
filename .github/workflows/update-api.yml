@@ -38,4 +38,4 @@ jobs:
         run: |
           cd ArmoniK.Api
           echo $(git rev-parse --abbrev-ref HEAD)
-          git push origin $(git rev-parse --abbrev-ref HEAD)
+          git push -c url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/" origin $(git rev-parse --abbrev-ref HEAD)
