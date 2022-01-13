@@ -24,7 +24,6 @@ message TaskIdList {
 message TaskOptions {
 	map<string, string> Options = 1;
 	int32 MaxRetries = 3;
-	int32 Priority = 4;
 	string IdTag = 5; // used to generate the taskId
 }
 
