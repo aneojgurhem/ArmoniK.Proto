@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths:
-      - V1
+      - **.proto
 
 jobs:
   # This workflow contains a single job called "build"
