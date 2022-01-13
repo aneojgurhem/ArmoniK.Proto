@@ -29,7 +29,6 @@ message TaskOptions {
 
 message SessionOptions {
 	TaskOptions DefaultTaskOption = 1;
-	string IdTag = 2; // used to generate the sessionId
 	TaskId ParentTask = 3;
 }
 
