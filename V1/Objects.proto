@@ -14,7 +14,6 @@ message SessionId {
 
 message TaskId {
 	string Session = 1;
-	string SubSession = 2;
 	string Task = 3;
 }
 
