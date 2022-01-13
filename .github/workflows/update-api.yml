@@ -21,16 +21,21 @@ jobs:
           git config --global user.name "Test"
           git config --global user.email "test@test.fr"
   
-      - name: Update ArmoniK.Api
+      - name: Clone ArmoniK.Api
         run: |
           git clone https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
           cd ArmoniK.Api
           git submodule update --remote
           echo $PWD
 
-      - name: Update ArmoniK.Api
+      - name: Modify ArmoniK.Api
         run: |
-          echo $PWD
+          cd ArmoniK.Api
           git commit -a -m "Test"
+          git show
+
+      - name: Push ArmoniK.Api
+        run: |
+          cd ArmoniK.Api
           echo $(git rev-parse --abbrev-ref HEAD)
           git push origin $(git rev-parse --abbrev-ref HEAD)
