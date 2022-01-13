@@ -23,10 +23,12 @@ jobs:
   
       - name: Clone ArmoniK.Api
         run: |
-          git clone -c url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/" https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
+          git clone -c url."https://${{ secrets.GITHUB_TOKEN }}@github.com/" https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
+
+      - name: Update ArmoniK.Api
+        run: |
           cd ArmoniK.Api
           git submodule update --remote
-          echo $PWD
 
       - name: Modify ArmoniK.Api
         run: |
