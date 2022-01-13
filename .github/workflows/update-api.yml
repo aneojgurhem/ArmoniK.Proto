@@ -23,7 +23,7 @@ jobs:
   
       - name: Clone ArmoniK.Api
         run: |
-          git clone -c url."https://${{ secrets.GITHUB_TOKEN }}@github.com/" https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/aneojgurhem/ArmoniK.Api.git --recursive
 
       - name: Update ArmoniK.Api
         run: |
