@@ -6,7 +6,8 @@ name: Update ArmoniK.Api
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - V1
 
@@ -27,4 +28,4 @@ jobs:
           cd ArmoniK.Api
           git submodule foreach git pull
           git commit -a -m "${{ github.event.head_commit.message }}"
-          git push origin $(git rev-parse --abbrev-ref HEAD)
+          #git push origin $(git rev-parse --abbrev-ref HEAD)
