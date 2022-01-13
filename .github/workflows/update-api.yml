@@ -8,7 +8,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   # This workflow contains a single job called "build"
@@ -18,8 +17,8 @@ jobs:
     steps:
       - name: Configure Git
         run: |
-          git config --global user.name "Test"
-          git config --global user.email "test@test.fr"
+          git config --global user.name "${{github.event.head_commit.committer.name}}"
+          git config --global user.email "${{github.event.head_commit.committer.email}}"
   
       - name: Clone ArmoniK.Api
         run: |
@@ -33,7 +32,7 @@ jobs:
       - name: Modify ArmoniK.Api
         run: |
           cd ArmoniK.Api
-          git commit -a -m "Test"
+          git commit -a -m "${{github.event.head_commit.message}}"
           git show
 
       - name: Push ArmoniK.Api
