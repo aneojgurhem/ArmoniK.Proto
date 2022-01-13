@@ -23,7 +23,7 @@ jobs:
   
       - name: Clone ArmoniK.Api
         run: |
-          git clone https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
+          git clone -c url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/" https://github.com/aneojgurhem/ArmoniK.Api.git --recursive
           cd ArmoniK.Api
           git submodule update --remote
           echo $PWD
@@ -38,4 +38,4 @@ jobs:
         run: |
           cd ArmoniK.Api
           echo $(git rev-parse --abbrev-ref HEAD)
-          git push -c url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/" origin $(git rev-parse --abbrev-ref HEAD)
+          git push origin $(git rev-parse --abbrev-ref HEAD)
