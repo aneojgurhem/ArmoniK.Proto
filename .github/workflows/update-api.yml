@@ -28,6 +28,6 @@ jobs:
           git clone https://github.com/aneoconsulting/ArmoniK.Api.git --recursive
           cd ArmoniK.Api
           git submodule update --remote
-          git commit -a -m "${{ github.event.head_commit.message }}"
+          git commit -a -m "Test"
           echo $(git rev-parse --abbrev-ref HEAD)
           #git push origin $(git rev-parse --abbrev-ref HEAD)
