@@ -20,8 +20,8 @@ jobs:
     steps:
       - name: Configure Git
         run: |
-          git config --global user.name "${{ github.event.head_commit.committer.name }}"
-          git config --global user.email "${{ github.event.head_commit.committer.email }}"
+          git config --global user.name "Test"
+          git config --global user.email "test@test.fr"
   
       - name: Update ArmoniK.Api
         run: |
@@ -29,4 +29,5 @@ jobs:
           cd ArmoniK.Api
           git submodule update --remote
           git commit -a -m "${{ github.event.head_commit.message }}"
+          echo $(git rev-parse --abbrev-ref HEAD)
           #git push origin $(git rev-parse --abbrev-ref HEAD)
