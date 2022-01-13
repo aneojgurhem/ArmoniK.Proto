@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 option csharp_namespace = "ArmoniK.Core.gRPC.V1";
 package ArmoniK.Core.gRPC.V1;
 
