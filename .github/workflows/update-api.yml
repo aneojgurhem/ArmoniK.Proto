@@ -18,7 +18,7 @@ jobs:
     with:
       name: ${{ github.event.head_commit.committer.name }}
       email: ${{ github.event.head_commit.committer.email }}
-      repo: github.com/aneojgurhem/ArmoniK.Api.git
+      repo: ${{ matrix.repos }}
       message: ${{ github.event.head_commit.message }}
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
