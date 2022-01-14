@@ -10,7 +10,7 @@ on:
       message:
         required: true
         type: string
-      repo:
+      repos:
         required: true
         type: string
     secrets:
@@ -20,6 +20,9 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: ${{ fromJSON(inputs.repos) }}
     steps:
       - name: Configure Git
         run: |
@@ -28,7 +31,7 @@ jobs:
   
       - name: Clone
         run: |
-          git clone https://${{ secrets.TOKEN }}@${{ inputs.repo }} --recursive ClonedRepo
+          git clone https://${{ secrets.TOKEN }}@${{ matrix.run }} --recursive ClonedRepo
 
       - name: Update
         run: |
