@@ -12,7 +12,7 @@ on:
         type: string
       repos:
         required: true
-        type: string
+        type: sequence
     secrets:
       TOKEN:
         required: true
