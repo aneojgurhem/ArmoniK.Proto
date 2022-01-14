@@ -12,7 +12,7 @@ on:
         type: string
       repos:
         required: true
-        type: sequence
+        type: string
     secrets:
       TOKEN:
         required: true
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: ${{ inputs.repos }}
+        run: ${{ fromJSON(inputs.repos) }}
     steps:
       - name: Configure Git
         run: |
