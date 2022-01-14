@@ -10,6 +10,9 @@ on:
       - main
 
 jobs:
+  strategy:
+    matrix:
+      repos: ["github.com/aneojgurhem/ArmoniK.Api.git", "github.com/aneojgurhem/ArmoniK.Api.git"]
   build:
     uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml@main
     with:
