@@ -13,10 +13,10 @@ jobs:
   build:
     uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml@main
     with:
-      name: ${{github.event.head_commit.committer.name}}
-      email: ${{github.event.head_commit.committer.email}}
+      name: ${{ github.event.head_commit.committer.name }}
+      email: ${{ github.event.head_commit.committer.email }}
       repo: github.com/aneojgurhem/ArmoniK.Api.git
-      message: github.com/aneojgurhem/ArmoniK.Api.git
+      message: ${{ github.event.head_commit.message }}
     secrets:
       TOKEN: ${{ secrets.TOKEN }}
 
