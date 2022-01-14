@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: ${{ fromJSON(inputs.repos) }}
+        run: ${{ inputs.repos }}
     steps:
       - name: Configure Git
         run: |
