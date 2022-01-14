@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml@${{ github.ref }}
+    uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml
     with:
       name: ${{github.event.head_commit.committer.name}}
       email: ${{github.event.head_commit.committer.email}}
