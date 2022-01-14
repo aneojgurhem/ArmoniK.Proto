@@ -14,12 +14,13 @@ jobs:
     strategy:
       matrix:
         run: ["github.com/aneojgurhem/ArmoniK.Api.git"]
-    uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml@main
-    with:
-      name: ${{ github.event.head_commit.committer.name }}
-      email: ${{ github.event.head_commit.committer.email }}
-      repo: ${{ matrix.run }}
-      message: ${{ github.event.head_commit.message }}
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
+    steps:
+    - uses: aneojgurhem/ArmoniK.Proto/.github/workflows/update-workflow.yml@main
+      with:
+        name: ${{ github.event.head_commit.committer.name }}
+        email: ${{ github.event.head_commit.committer.email }}
+        repo: ${{ matrix.run }}
+        message: ${{ github.event.head_commit.message }}
+      secrets:
+        TOKEN: ${{ secrets.TOKEN }}
 
